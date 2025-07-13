@@ -2,7 +2,7 @@ import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 
 
-const exercisePath = "C:\\Users\\user3\\OneDrive\\Pulpit\\prawdziwy-kalkulator";
+const exercisePath = "C:\\Users\\user3\\OneDrive\\Pulpit\\bingo";
 
 
 export default defineConfig({
