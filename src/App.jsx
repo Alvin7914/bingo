@@ -1,12 +1,25 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import {createRoot} from 'react-dom/client';
+import TopBar from './js/components/TopBar';
+import NewBingo from './js/components/NewBingo';
+import SavedBingo from './js/components/SavedBingo';
+import { Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import shhhImage from './assets/shhh.png'
 
 const App = () => {
 
     return (
-        <>
-        Bingo
-        </>
+        <BrowserRouter>
+        <TopBar />
+        <Routes>
+            <Route
+            path='/'
+            element={<img src={shhhImage} alt='Shhh...' className='shhhImage'/>} />
+            <Route path='/new' element={<NewBingo />} />
+            <Route path='/saved' element={<SavedBingo />} />
+        </Routes>
+        </BrowserRouter>
     )
 }
 
