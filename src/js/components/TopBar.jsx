@@ -6,7 +6,7 @@ const TopBar = () => {
 
     return (
 <header className="header">
-    <img src='src/assets/leaf3.png' alt='Leaf' className="leaf-image"/>
+    <Link to='/'><img src='src/assets/leaf3.png' alt='Leaf' className="leaf-image"/></Link>
     <nav className="header__nav">
         <ul className="header__nav__list">
             <li className="header__nav__list-element"><Link to="/new">Nowe bingo</Link></li>
