@@ -1,0 +1,5 @@
+nowe bingo:
+przycisk zapisywania
+przycisk czyszczenia
+przycisk dodawania wpisu
+przycisk usuwania wpisu
