@@ -11,11 +11,15 @@
     top: 0;
     left: 0;
     z-index: 2;
+    gap: 50px;
 
     .leaf-image {
         width: 80px;
         height: 80px;
-        margin-right: 50px;
+        &:hover {
+            cursor: pointer;
+        }
+        
     }
 
     &__nav__list {

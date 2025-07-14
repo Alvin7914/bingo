@@ -1,3 +1,114 @@
 .new-bingo {
     margin-top: 100px;
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        width: 1000px;
+        max-height: 600px;
+        background-color: #77f181;
+        margin-top: 50px;
+        padding: 20px;
+        border: 3px solid green;
+        border-radius: 15px;
+        box-shadow: 9px 9px 5px rgb(2, 83, 8);
+
+        &__input-name {
+            align-self: center;
+            width: 400px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #e9e9e7;
+            font-weight: bold;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+            &::placeholder {
+                text-align: center;
+            }
+        }
+
+        &-h2 {
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: 25px;
+            font-weight: bold;
+            align-self: center;
+            color: rgb(5, 107, 5);
+        }
+
+        &-list {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 20px;
+            background-color: #62ec6d;
+            border: 3px solid green;
+            border-radius: 15px;
+            box-shadow: 3px 3px 5px rgb(2, 83, 8);
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            font-size: 20px;
+            color: rgb(5, 107, 5);
+        }
+
+        &__input-entry {
+            width: 500px;
+            padding: 5px 10px;
+            border: 1px solid black;
+            border-radius: 8px;
+            background-color: #e9e9e7;
+            font-weight: bold;
+            font-size: 25px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            text-align: center;
+        }
+    
+    
+        .plus-svg {
+        width: 100px;
+        height: 100px;
+        fill: red;
+        }
+
+
+    .form__add {
+        display: flex;
+        align-items: center;
+        .plus-sign {
+            margin-left: 10px;
+        
+        &> span {
+            width: 20px;
+            height: 5px;
+            background-color: rgb(5, 107, 5);
+            display: block;
+            cursor: pointer;
+            border-radius: 3px;
+            position: relative;
+    
+            &.plus-1 {
+                transform: rotate(90deg);
+                top: 3px;
+            }
+
+            &.plus-2 {
+                
+                top: -2px;
+            }
+        
+        }}
+    }
+
+    &-saveBtn {
+        margin-top: 20px;
+        align-self: flex-end;
+    }
+    
+  }
+
+    
 }
