@@ -11,7 +11,7 @@ const NewBingo = () => {
 
     }, []);
 
-    const addEntry = () => {
+    const addEntry = () => { // handler do przycisku dodawania wpisu
         const newEntryInput = document.querySelector('#new-entry-input');
         const newValue = newEntryInput.value.trim();
 
@@ -32,25 +32,75 @@ const NewBingo = () => {
         newEntryInput.value = '';
     }
 
-    const removeEntry = (e) => {
+    const removeEntry = (e) => { // handler do przycisku usuwania wpisu
 
-    if (e.target.parentElement.tagName === "g") {
-        const toDelete = e.target.parentElement.parentElement.parentElement.children[0].textContent;
+        if (e.target.parentElement.tagName === "g") {
+            const toDelete = e.target.parentElement.parentElement.parentElement.children[0].textContent;
 
-       const newList = JSON.parse(localStorage.getItem('entriesList')).filter(entry => entry.entry !== toDelete)
+            const newList = JSON.parse(localStorage.getItem('entriesList')).filter(entry => entry.entry !== toDelete)
 
-       localStorage.setItem('entriesList', JSON.stringify(newList));
-       setEntriesList(newList);
-    } else {
-        const toDelete = e.target.parentElement.children[0].textContent;
-        const newList = JSON.parse(localStorage.getItem('entriesList')).filter(entry => entry.entry !== toDelete)
+            localStorage.setItem('entriesList', JSON.stringify(newList));
+            setEntriesList(newList);
+        } else {
+            const toDelete = e.target.parentElement.children[0].textContent;
+            const newList = JSON.parse(localStorage.getItem('entriesList')).filter(entry => entry.entry !== toDelete)
 
-       localStorage.setItem('entriesList', JSON.stringify(newList));
-       setEntriesList(newList);
+            localStorage.setItem('entriesList', JSON.stringify(newList));
+            setEntriesList(newList);
+        }
     }
-    
-    
 
+    const clearAll = (e) => {
+        e.preventDefault();
+
+        const inputEntry = document.querySelector('#new-entry-input');
+        const inputName = document.querySelector('#name-input');
+        const emptyList = [];
+
+        setEntriesList(emptyList);
+        localStorage.setItem('entriesList', JSON.stringify(emptyList));
+        inputEntry.value = "";
+        inputName.value = "";
+    }
+
+    const saveGame = (e) => {
+        e.preventDefault();
+
+        if (entriesList.length == 0 || document.querySelector('#name-input').value == "") {
+            alert('Nie można dodać nienazwanej lub pustej planszy')
+        } else {
+            
+            const game1 = JSON.parse(localStorage.getItem('entriesList'));
+            const emptyEntries = [];
+
+
+            if (localStorage.getItem('savedGames') === null || localStorage.getItem('savedGames').length == 0) {
+                const name = document.querySelector('#name-input').value;
+                const gameObject = {
+                    name: name,
+                    entries: game1
+                }
+
+                const game2 = [gameObject]
+                localStorage.setItem('savedGames', JSON.stringify(game2))
+            } else {
+                const games = JSON.parse(localStorage.getItem('savedGames'));
+                const name = document.querySelector('#name-input').value;
+                const gameObject = {
+                    name: name,
+                    entries: game1
+                }
+
+                const games2 = [...games, gameObject];
+                localStorage.setItem('savedGames', JSON.stringify(games2));
+            }
+
+            setEntriesList([]);
+            localStorage.setItem('entriesList', JSON.stringify(emptyEntries));
+            document.querySelector('#name-input').value = '';
+            document.querySelector('#new-entry-input').value = '';
+
+        }
     }
 
 
@@ -130,8 +180,8 @@ const NewBingo = () => {
                     </ul>
                 </div>
                 <div className="new-bingo__form__btn-box">
-                    <button className="new-bingo__form-clearBtn">Wyczyść wszystko</button>
-                    <button className="new-bingo__form-saveBtn">Zapisz</button>
+                    <button className="new-bingo__form-clearBtn" onClick={clearAll}>Wyczyść wszystko</button>
+                    <button className="new-bingo__form-saveBtn" onClick={saveGame}>Zapisz</button>
                 </div>
             </form>
         </main>
