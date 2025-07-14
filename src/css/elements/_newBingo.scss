@@ -26,6 +26,7 @@
             font-size: 30px;
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: center;
+
             &::placeholder {
                 text-align: center;
             }
@@ -66,49 +67,51 @@
             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
             text-align: center;
         }
-    
-    
+
+
         .plus-svg {
-        width: 100px;
-        height: 100px;
-        fill: red;
+            width: 100px;
+            height: 100px;
+            fill: red;
         }
 
 
-    .form__add {
-        display: flex;
-        align-items: center;
-        .plus-sign {
-            margin-left: 10px;
-        
-        &> span {
-            width: 20px;
-            height: 5px;
-            background-color: rgb(5, 107, 5);
-            display: block;
-            cursor: pointer;
-            border-radius: 3px;
-            position: relative;
-    
-            &.plus-1 {
-                transform: rotate(90deg);
-                top: 3px;
-            }
+        .form__add {
+            display: flex;
+            align-items: center;
 
-            &.plus-2 {
-                
-                top: -2px;
+            .plus-sign {
+                margin-left: 10px;
+
+                &>span {
+                    width: 20px;
+                    height: 5px;
+                    background-color: rgb(5, 107, 5);
+                    display: block;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    position: relative;
+
+                    &.plus-1 {
+                        transform: rotate(90deg);
+                        top: 3px;
+                    }
+
+                    &.plus-2 {
+
+                        top: -2px;
+                    }
+
+                }
             }
-        
-        }}
+        }
+
+        &-saveBtn {
+            margin-top: 20px;
+            align-self: flex-end;
+        }
+
     }
 
-    &-saveBtn {
-        margin-top: 20px;
-        align-self: flex-end;
-    }
-    
-  }
 
-    
 }

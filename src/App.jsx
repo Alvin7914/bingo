@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import {createRoot} from 'react-dom/client';
+import { createRoot } from 'react-dom/client';
 import TopBar from './js/components/TopBar';
 import NewBingo from './js/components/NewBingo';
 import SavedBingo from './js/components/SavedBingo';
@@ -12,15 +12,15 @@ const App = () => {
 
     return (
         <BrowserRouter>
-        <TopBar />
-        <Routes>
-            <Route
-            path='/'
-            element={<img src={shhhImage} alt='Shhh...' className='shhhImage'/>} />
-            <Route path='/new' element={<NewBingo />} />
-            <Route path='/saved' element={<SavedBingo />} />
-            <Route path='/game' element={<CurrentGame />}/>
-        </Routes>
+            <TopBar />
+            <Routes>
+                <Route
+                    path='/'
+                    element={<img src={shhhImage} alt='Shhh...' className='shhhImage' />} />
+                <Route path='/new' element={<NewBingo />} />
+                <Route path='/saved' element={<SavedBingo />} />
+                <Route path='/game' element={<CurrentGame />} />
+            </Routes>
         </BrowserRouter>
     )
 }

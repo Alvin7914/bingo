@@ -4,7 +4,7 @@ const SavedBingo = () => {
 
 
     return (
-        <div  className="saved-bingo">
+        <div className="saved-bingo">
             Zapisane Bingo
         </div>
     )
