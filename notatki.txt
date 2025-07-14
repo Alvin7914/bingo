@@ -1,4 +1,5 @@
 nowe bingo:
+lista wpisów
 przycisk zapisywania
 przycisk czyszczenia
 przycisk dodawania wpisu
