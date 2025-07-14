@@ -33,6 +33,7 @@ const NewBingo = () => {
                 </div>
             </li>
         </ul>
+        <button className="new-bingo__form-saveBtn">Zapisz</button>
     </form>
 </main>
     )
