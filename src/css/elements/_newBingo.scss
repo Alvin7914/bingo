@@ -40,7 +40,7 @@
             color: rgb(5, 107, 5);
         }
 
-        &-list {
+        &-box {
             max-height: 400px;
             overflow-y: auto;
             margin-top: 20px;
@@ -49,11 +49,21 @@
             border-radius: 15px;
             box-shadow: 3px 3px 5px rgb(2, 83, 8);
             padding: 10px;
+
+        }
+
+        &-list {
             display: flex;
             flex-direction: column;
             gap: 5px;
             font-size: 20px;
+            font-weight: bold;
             color: rgb(5, 107, 5);
+
+            &__lis {
+                display: flex;
+                align-items: center;
+            }
         }
 
         &__input-entry {
@@ -106,9 +116,36 @@
             }
         }
 
-        &-saveBtn {
+        &__btn-box {
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        &-saveBtn,
+        &-clearBtn {
+            width: 150px;
+            height: 50px;
+            border: 2px solid black;
+            border-radius: 25px;
+            background-color: #e9e9e7;
+            box-shadow: 3px 3px 5px rgb(2, 83, 8);
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-weight: bold;
+            color: rgb(110, 110, 110);
+            font-size: 25px;
             margin-top: 20px;
-            align-self: flex-end;
+
+            &:active {
+                padding-top: 2px;
+                padding-left: 2px;
+                box-shadow: inset 3px 3px 5px rgb(2, 83, 8)
+            }
+        }
+
+        &-clearBtn {
+            width: 250px;
         }
 
     }
