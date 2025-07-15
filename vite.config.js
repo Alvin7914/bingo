@@ -11,5 +11,5 @@ export default defineConfig({
     //     port: 3000,
     // },
     plugins: [react()],
-    base: 'bingo',
+    base: '/bingo/',
 });
