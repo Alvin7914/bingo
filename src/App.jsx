@@ -5,7 +5,6 @@ import TopBar from './js/components/TopBar';
 import NewBingo from './js/components/NewBingo';
 import SavedBingo from './js/components/SavedBingo';
 import CurrentGame from './js/components/CurrnetGame';
-import { Link } from 'react-router-dom';
 import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
 import shhhImage from './assets/shhh.png'
 
@@ -26,6 +25,4 @@ const App = () => {
     )
 }
 
-const container = document.getElementById('app');
-const root = createRoot(container);
-root.render(<App />);
+export default App;
