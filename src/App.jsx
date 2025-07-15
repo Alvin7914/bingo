@@ -5,13 +5,13 @@ import NewBingo from './js/components/NewBingo';
 import SavedBingo from './js/components/SavedBingo';
 import CurrentGame from './js/components/CurrnetGame';
 import { Link } from 'react-router-dom';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { HashRouter, BrowserRouter, Routes, Route } from 'react-router-dom';
 import shhhImage from './assets/shhh.png'
 
 const App = () => {
 
     return (
-        <BrowserRouter>
+        <HashRouter>
             <TopBar />
             <Routes>
                 <Route
@@ -21,7 +21,7 @@ const App = () => {
                 <Route path='/saved' element={<SavedBingo />} />
                 <Route path='/game' element={<CurrentGame />} />
             </Routes>
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
