@@ -1,3 +1,4 @@
+import './css/main.scss';
 import React, { Fragment } from 'react';
 import { createRoot } from 'react-dom/client';
 import TopBar from './js/components/TopBar';
