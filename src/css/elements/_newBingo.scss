@@ -2,16 +2,17 @@
     margin-top: 100px;
 
     &__form {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        width: 1000px;
+        @include main-box;
+        // display: flex;
+        // flex-direction: column;
+        // align-items: left;
+        // width: 1000px;
         max-height: 600px;
         background-color: #77f181;
-        margin-top: 50px;
-        padding: 20px;
+        // margin-top: 50px;
+        // padding: 20px;
         border: 3px solid green;
-        border-radius: 15px;
+        // border-radius: 15px;
         box-shadow: 9px 9px 5px rgb(2, 83, 8);
 
         &__input-name {
