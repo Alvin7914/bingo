@@ -4,3 +4,9 @@ przycisk zapisywania
 przycisk czyszczenia
 przycisk dodawania wpisu
 przycisk usuwania wpisu
+
+zapisane bingo:
+-przycisk usuwania
+-przycisk odtwarzania
+-licznik haseł
+-kropki przy wpisach

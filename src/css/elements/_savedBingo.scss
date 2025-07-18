@@ -4,7 +4,8 @@
     &__box {
         @include main-box;
         width: 600px;
-        max-height: 1000px;
+        height: auto;
+        margin-bottom: 50px;
         padding-bottom: 0;
         background-color: #418beb;
         border: 3px solid blue;
@@ -26,6 +27,7 @@
                 border: 2px solid blue;
                 border-radius: 15px;
                 margin-bottom: 20px;
+                box-shadow: 3px 3px 5px blue;
 
                 &__name {
                     font-family: 'Courier New', Courier, monospace;
@@ -46,6 +48,39 @@
                     width: 60%;
                     font-style: italic;
                     font-weight: 600;
+                }
+
+                &__buttons-box {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    &>button {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: #20bf28;
+                        border: 2px solid rgb(2, 139, 2);
+                        border-radius: 5px;
+                        width: 30px;
+                        height: 30px;
+                        margin-right: 10px;
+                        margin-left: 10px;
+                    }
+
+                    #delete-btn {
+                        margin-top: 20px;
+                        background-color: rgb(253, 132, 132);
+                        border: 2px solid red;
+
+                    }
+
+                    & p {
+                        margin-bottom: 20px;
+                        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+                        font-weight: bold;
+
+                    }
                 }
             }
         }
