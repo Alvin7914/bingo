@@ -69,36 +69,50 @@ const NewBingo = () => {
         if (entriesList.length == 0 || document.querySelector('#name-input').value == "") {
             alert('Nie można dodać nienazwanej lub pustej planszy')
         } else {
-            
-            const game1 = JSON.parse(localStorage.getItem('entriesList'));
-            const emptyEntries = [];
+            const gamesList = JSON.parse(localStorage.getItem('savedGames')) || []; //start
+            const newName = document.querySelector("#name-input").value;
 
+            const nameExists = gamesList.some(game => game.name.toLowerCase() === newName.toLowerCase());
 
-            if (localStorage.getItem('savedGames') === null || localStorage.getItem('savedGames').length == 0) {
-                const name = document.querySelector('#name-input').value;
-                const gameObject = {
-                    name: name,
-                    entries: game1
-                }
-
-                const game2 = [gameObject]
-                localStorage.setItem('savedGames', JSON.stringify(game2))
+            if (nameExists) {
+                alert("Gra o takiej nazwie już istnieje");
+                return;
             } else {
-                const games = JSON.parse(localStorage.getItem('savedGames'));
-                const name = document.querySelector('#name-input').value;
-                const gameObject = {
-                    name: name,
-                    entries: game1
+
+                const game1 = JSON.parse(localStorage.getItem('entriesList'));
+                const emptyEntries = [];
+
+
+                if (localStorage.getItem('savedGames') === null || localStorage.getItem('savedGames').length == 0) {
+                    const name = document.querySelector('#name-input').value;
+                    const gameObject = {
+                        name: name,
+                        entries: game1
+                    }
+
+                    const game2 = [gameObject]
+                    localStorage.setItem('savedGames', JSON.stringify(game2))
+                } else {
+                    const games = JSON.parse(localStorage.getItem('savedGames'));
+                    const name = document.querySelector('#name-input').value;
+                    const gameObject = {
+                        name: name,
+                        entries: game1
+                    }
+
+                    const games2 = [...games, gameObject];
+                    localStorage.setItem('savedGames', JSON.stringify(games2));
                 }
 
-                const games2 = [...games, gameObject];
-                localStorage.setItem('savedGames', JSON.stringify(games2));
+                setEntriesList([]);
+                localStorage.setItem('entriesList', JSON.stringify(emptyEntries));
+                document.querySelector('#name-input').value = '';
+                document.querySelector('#new-entry-input').value = '';
+
+
+
             }
 
-            setEntriesList([]);
-            localStorage.setItem('entriesList', JSON.stringify(emptyEntries));
-            document.querySelector('#name-input').value = '';
-            document.querySelector('#new-entry-input').value = '';
 
         }
     }
